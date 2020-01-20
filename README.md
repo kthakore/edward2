@@ -58,6 +58,7 @@ Random variables are formed like TensorFlow Distributions.
 
 ```python
 import edward2 as ed
+import numpy as np
 
 normal_rv = ed.Normal(loc=0., scale=1.)
 ## <ed.RandomVariable 'Normal/' shape=() dtype=float32 numpy=0.0024812892>
@@ -66,8 +67,8 @@ normal_rv.distribution.log_prob(1.231)
 
 dirichlet_rv = ed.Dirichlet(concentration=tf.ones([2, 3]))
 ## <ed.RandomVariable 'Dirichlet/' shape=(2, 3) dtype=float32 numpy=
-array([[0.15864784, 0.01217205, 0.82918006],
-       [0.23385087, 0.69622266, 0.06992647]], dtype=float32)>
+np.array([[0.15864784, 0.01217205, 0.82918006],
+       [0.23385087, 0.69622266, 0.06992647]], dtype=np.float32)
 ```
 
 By default, instantiating a random variable `rv` creates a sampling op to form
